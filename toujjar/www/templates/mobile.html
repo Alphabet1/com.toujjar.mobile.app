@@ -1,5 +1,42 @@
 <ion-view view-title="{{'TAB2' | translate}}">
     <ion-content class="padding">
-        <h1>{{'mobile_desc' | translate}}</h1>
+         <div class="list">
+	  <label class="item item-input item-floating-label">
+	    <input type="text" placeholder="Marque" ng-model="phone.marque">
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <input type="text" placeholder="Camera" ng-model="phone.camera">
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <input type="text" placeholder="Memoire" ng-model="phone.memoire">
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <input type="text" placeholder="Couleur" ng-model="phone.couleur">
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <input type="text" placeholder="isNeuf" ng-model="phone.isNeuf">
+	  </label>
+	   <label class="item item-input item-floating-label">
+	    <input type="text" placeholder="isDuos" ng-model="phone.isDuos">
+	  </label>
+	   <label class="item item-input item-floating-label">
+	    <input type="text" placeholder="prix" ng-model="phone.prix">
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <input type="text" placeholder="ville" ng-model="phone.ville">
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <input type="text" placeholder="phone" ng-model="phone.phone">
+	  </label>
+	  <label class="item item-input item-floating-label" >
+	    <input type="text" placeholder="email" ng-model="phone.email">
+	  </label>
+	  <label class="item item-input item-floating-label">
+	    <input type="file" placeholder="photo" ng-model="phone.image">
+	  </label>
+	  <label class="item item-input item-floating-label">
+	   <button ng-click="addPhone()">add Phone</button>
+	  </label>
+	</div>
     </ion-content>
 </ion-view>
