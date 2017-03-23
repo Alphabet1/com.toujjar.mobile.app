@@ -3,6 +3,17 @@ app.controller('phoneCtrl',function ($scope,$translate,$http,phoneService) {
      
 	 $scope.curlang = $translate.use();
 
+	 //object contient list de marque et model
+	 var phoneList = {
+		 list: [
+				{"id":"1", "marque":"Sumsung", "model":"A5"},
+				{"id":"2", "marque":"Sumsung", "model":"S4"},
+				{"id":"3", "marque":"Apple", "model":"iphone6"},
+				{"id":"4", "marque":"Apple", "model":"iphone5"},
+			],
+			selectedOption : {"id":"", "marque":"", "model":""}
+		 };
+	 
 	  var villes = {
         list: [
             {id: '1', name: 'nktt'},
@@ -12,6 +23,10 @@ app.controller('phoneCtrl',function ($scope,$translate,$http,phoneService) {
         selectedOption: {id: '3', name: 'nktt'}  
     };
 
+	
+	
+	$scope.phoneList = phoneList;
+	$scope.prix = /^[0-9]{1,}(\.|)[0-9]{0,2}$/g;
 	$scope.phoneNumbr = /^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i;
 
      	var phone = {
@@ -46,14 +61,15 @@ app.controller('phoneCtrl',function ($scope,$translate,$http,phoneService) {
        // fd = new FormData();
 		if(!img)
 			return;
+
 		phone.image1 = img[0].resized.dataURL;
 		phone.image2 = img[1].resized.dataURL;
 		phone.image3 = img[2].resized.dataURL;
 		phone.image4 = img[3].resized.dataURL;		
 		phone.ville = villes.selectedOption.name;
+		phone.model = phoneList.selectedOption.model;
+		phone.marque = phoneList.selectedOption.marque;
 		
-
-		console.log(img.length);
 		
 		console.log(phone);
 		
