@@ -1,6 +1,7 @@
 angular.module('starter.controllers', ['pascalprecht.translate'])
 app.controller('phoneCtrl',function ($scope,$translate,$http,phoneService) {
-     $scope.curlang = $translate.use();
+     
+	 $scope.curlang = $translate.use();
 
 	  var villes = {
         list: [
@@ -48,15 +49,13 @@ app.controller('phoneCtrl',function ($scope,$translate,$http,phoneService) {
 		phone.image1 = img[0].resized.dataURL;
 		phone.image2 = img[1].resized.dataURL;
 		phone.image3 = img[2].resized.dataURL;
-		phone.image4 = img[3].resized.dataURL;
-		phone.password = md5.createHash($scope.phone.password);		
+		phone.image4 = img[3].resized.dataURL;		
 		phone.ville = villes.selectedOption.name;
 		
 
 		console.log(img.length);
 		
 		console.log(phone);
-		//console.log(img[0].resized.dataURL);
 		
 		//Uploading phone data object
         phoneService.postData(phone);

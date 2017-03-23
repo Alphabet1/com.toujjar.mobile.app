@@ -13,7 +13,7 @@ app.service('phoneService',function($http){
                 ).success(function (data) {
                     console.log(data);
                 }).error(function(err){
-                    console.log("Il ya un erreur op");
+                    console.log("connexion n'est pas etablie !!");
                 });
          };
 });

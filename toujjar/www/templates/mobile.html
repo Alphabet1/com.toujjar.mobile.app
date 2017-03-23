@@ -1,5 +1,5 @@
 <ion-view view-title="{{'TAB2' | translate}}">
-    <ion-content class="padding">
+    <ion-content class="padding" scroll="true" class="padding-bottom">
 			<ion-scroll>
 		<form name="phoneForm">
 
@@ -96,8 +96,7 @@
 
 
 	  <div>
-			<p>Etat : </p>
-			<input type="radio" 
+			Etat : <input type="radio" 
 						ng-model="phone.isNeuf" 
 						value="oui" 
 						ng-required="!phone.isNeuf">  oui
@@ -109,8 +108,7 @@
 
 
 	    <div >
-			<p>Double sim ou pas : </p>
-			<input type="radio" 
+			double sim ou non : <input type="radio" 
 						ng-model="phone.isDuos" 
 						value="oui" 
 						ng-required="!phone.isDuos">  oui 
