@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="bdToujjarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="phone">
+          <Key>
+            <PropertyRef Name="idPhone" />
+          </Key>
+          <Property Name="idPhone" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="marque" Type="nvarchar" MaxLength="50" />
+          <Property Name="memoire" Type="int" />
+          <Property Name="camera" Type="int" />
+          <Property Name="coulleur" Type="nvarchar" MaxLength="50" />
+          <Property Name="isDuos" Type="nvarchar" MaxLength="50" />
+          <Property Name="isNeuf" Type="nvarchar" MaxLength="50" />
+          <Property Name="prix" Type="bigint" />
+          <Property Name="ville" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="image1" Type="text" />
+          <Property Name="model" Type="nvarchar" MaxLength="50" />
+          <Property Name="trader_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="trader_facebook" Type="nvarchar(max)" />
+          <Property Name="trader_insta" Type="nvarchar(max)" />
+          <Property Name="temps" Type="datetime" />
+          <Property Name="img_count" Type="int" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="bdToujjarModelStoreContainer">
+          <EntitySet Name="phone" EntityType="Self.phone" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bdToujjarModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="phone">
+          <Key>
+            <PropertyRef Name="idPhone" />
+          </Key>
+          <Property Name="idPhone" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="marque" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="memoire" Type="Int32" />
+          <Property Name="camera" Type="Int32" />
+          <Property Name="coulleur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isDuos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isNeuf" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="prix" Type="Int64" />
+          <Property Name="ville" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="image1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="trader_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="trader_facebook" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="trader_insta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="temps" Type="DateTime" Precision="3" />
+          <Property Name="img_count" Type="Int32" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="bdToujjarEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="phone" EntityType="Self.phone" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="bdToujjarModelStoreContainer" CdmEntityContainer="bdToujjarEntities">
+          <EntitySetMapping Name="phone">
+            <EntityTypeMapping TypeName="bdToujjarModel.phone">
+              <MappingFragment StoreEntitySet="phone">
+                <ScalarProperty Name="idPhone" ColumnName="idPhone" />
+                <ScalarProperty Name="marque" ColumnName="marque" />
+                <ScalarProperty Name="memoire" ColumnName="memoire" />
+                <ScalarProperty Name="camera" ColumnName="camera" />
+                <ScalarProperty Name="coulleur" ColumnName="coulleur" />
+                <ScalarProperty Name="isDuos" ColumnName="isDuos" />
+                <ScalarProperty Name="isNeuf" ColumnName="isNeuf" />
+                <ScalarProperty Name="prix" ColumnName="prix" />
+                <ScalarProperty Name="ville" ColumnName="ville" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone1" ColumnName="phone" />
+                <ScalarProperty Name="image1" ColumnName="image1" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="trader_name" ColumnName="trader_name" />
+                <ScalarProperty Name="trader_facebook" ColumnName="trader_facebook" />
+                <ScalarProperty Name="trader_insta" ColumnName="trader_insta" />
+                <ScalarProperty Name="temps" ColumnName="temps" />
+                <ScalarProperty Name="img_count" ColumnName="img_count" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

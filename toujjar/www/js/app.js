@@ -6,7 +6,12 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 //
-var app = angular.module('toujjar', ['ionic', 'starter.controllers', 'starter.services'])
+var app = angular.module('toujjar', ['ionic',
+                                     'starter.controllers', 
+                                     'starter.services',
+                                     'images-resizer',
+                                     'imageupload'
+                                     ])
 
 app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -23,3 +28,5 @@ app.run(function($ionicPlatform) {
     }
   });
 });
+
+

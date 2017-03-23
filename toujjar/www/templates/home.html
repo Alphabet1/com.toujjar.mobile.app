@@ -2,13 +2,8 @@
     <ion-content class="padding">
         <h1>{{'dash_desc' | translate}}</h1>
 
-        <ion-item  class="item item-avatar" ng-repeat="p in phone">
-             <img ng-src="">
-             <p>{{p.marque}}</p>
-             <p>{{p.prix}}</p>
-             <p>{{p.camera}}</p>
-             <p>{{p.email}}</p>
-        </ion-item>
-        
+        <button  ng-click="go()">post annonce</button>
+        <hr />
+
     </ion-content>
 </ion-view>

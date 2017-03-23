@@ -1,42 +1,273 @@
 <ion-view view-title="{{'TAB2' | translate}}">
     <ion-content class="padding">
-         <div class="list">
+			<ion-scroll>
+		<form name="phoneForm">
+
+	<label>
+		<input type="text"
+			   name="marque"
+				 placeholder="marque"
+			   ng-model="phone.marque"
+			   ng-minlength="2"
+			   ng-maxlength="10" required />
+				 <div ng-show="phoneForm.$submitted || phoneForm.marque.$touched">
+					<span ng-show="phoneForm.marque.$error.minlength" class="help-block">
+					  marque n'est pas valid.
+					</span>
+					 <span ng-show="phoneForm.marque.$error.maxlength" class="help-block">
+						  marque n'est pas valid.
+					 </span>
+				</div>
+	</label>
+
+
+	   <label >
+			 <input type="number" 
+			 				name="camera" 
+              placeholder="camera qualite"
+			 				ng-model="phone.camera"
+           		min="4" 
+							max="14" 
+							required>
+			<div ng-show="phoneForm.$submitted || phoneForm.marque.$touched">
+					<span ng-show="phoneForm.camera.$error.min" class="help-block">
+					  n'est pas valid.
+					</span>
+					 <span ng-show="phoneForm.camera.$error.max" class="help-block">
+						  assez grand.
+					 </span>
+				</div>
+	  </label>
+
+
+
+	  <label>
+			 <input type="number" 
+			 				name="memoire" 
+							placeholder="memoire"
+			 				ng-model="phone.memoire"
+           		min="1" 
+							max="200" 
+							required>
+			<div ng-show="phoneForm.$submitted || phoneForm.marque.$touched">
+					<span ng-show="phoneForm.memoire.$error.min" class="help-block">
+					  memoire tres petit.
+					</span>
+					 <span ng-show="phoneForm.memoire.$error.max" class="help-block">
+						  memoire tres petit.
+					 </span>
+				</div>
+	  </label>
+
+		<label>
+		<input type="text"
+			   name="model"
+				 placeholder="model"
+			   ng-model="phone.model"
+			   ng-minlength="2"
+			   ng-maxlength="10" required />
+				 <div ng-show="phoneForm.$submitted || phoneForm.marque.$touched">
+					<span ng-show="phoneForm.model.$error.minlength" class="help-block">
+					  model n'est pas valid.
+					</span>
+					 <span ng-show="phoneForm.model.$error.maxlength" class="help-block">
+						  marque n'est pas valid.
+					 </span>
+				</div>
+	</label>
+
+
 	  <label class="item item-input item-floating-label">
-	    <input type="text" placeholder="Marque" ng-model="phone.marque">
+		<input type="text"
+			   name="couleur"
+				 placeholder="couleur"
+			   ng-model="phone.coulleur"
+			   ng-minlength="3"
+			   ng-maxlength="6" required />
+				 <div ng-show="phoneForm.$submitted || phoneForm.marque.$touched">
+					<span ng-show="phoneForm.couleur.$error.minlength" class="help-block">
+					  couleur n'est pas valid.
+					</span>
+					 <span ng-show="phoneForm.couleur.$error.maxlength" class="help-block">
+						  couleur n'est pas valid.
+					 </span>
+				</div>
+	</label>
+
+
+	  <div>
+			<p>Etat : </p>
+			<input type="radio" 
+						ng-model="phone.isNeuf" 
+						value="oui" 
+						ng-required="!phone.isNeuf">  oui
+			<input type="radio" 
+							ng-model="phone.isNeuf" 
+							value="non" 
+							ng-required="!phone.isNeuf"> non 
+	  </div>
+
+
+	    <div >
+			<p>Double sim ou pas : </p>
+			<input type="radio" 
+						ng-model="phone.isDuos" 
+						value="oui" 
+						ng-required="!phone.isDuos">  oui 
+			<input type="radio" 
+							ng-model="phone.isDuos" 
+							value="non" 
+							ng-required="!phone.isDuos"> non 
+	    </div>
+
+
+	  <div >
+			 <input type="number" 
+			 				name="prix" 
+							placeholder="prix"
+			 				ng-model="phone.prix"
+           		min="5000" 
+							max="300000" 
+							required>
+			<div ng-show="phoneForm.$submitted || phoneForm.marque.$touched">
+					<span ng-show="phoneForm.prix.$error.min" class="help-block">
+					  le prix tres petit.
+					</span>
+					 <span ng-show="phoneForm.prix.$error.max" class="help-block">
+						  Assez tres grand.
+					 </span>
+				</div>
+	  </div>
+
+		
+	  <label>
+			<select 	name="villes" id="villes" required
+                ng-options="option.name for option in villes.list track by option.id"
+          			ng-model="villes.selectedOption">
+			</select>
 	  </label>
-	  <label class="item item-input item-floating-label">
-	    <input type="text" placeholder="Camera" ng-model="phone.camera">
+
+	
+	    
+			<div>
+      <input type="text"
+					 placeholder="+22227766003" 
+					 name="phone" ng-pattern="phoneNumbr" 
+					 ng-model="phone.phone1" />
+      <span class="error" ng-show="phoneForm.phone.$error.required">
+				obligatoire!</span>
+      <span class="error" ng-show="phoneForm.phone.$error.minlength">
+				Phone no not less that 10 char.</span>
+      <span class="error" ng-show="phoneForm.phone.$error.maxlength">
+				Phone no not more than 11 char.</span>
+      <br><span class="error" ng-show="phoneForm.phone.$error.pattern">
+				le doit etre [+22227766003 ou 277766003]</span>
+    </div>
+
+	  <label >
+	    <input type="email" 
+						name="email"
+						placeholder="exemple@exemple.com" 
+						ng-model="phone.email">
+						<div ng-show="phoneForm.$submitted && phoneForm.phone.$touched">
+							<span ng-show="phoneForm.email.$error.email" class="help-block">
+								email n'est pas correct?
+							</span>
+						</div>
 	  </label>
-	  <label class="item item-input item-floating-label">
-	    <input type="text" placeholder="Memoire" ng-model="phone.memoire">
+		<label>
+			<input type="password" 
+					   name="password"
+						 placeholder="password"
+						 ng-model="phone.password"
+						 minlength="6"
+						 maxlength="10" 
+							required/>
+				<div ng-show="phoneForm.$submitted || phoneForm.marque.$touched">
+					<span ng-show="phoneForm.password.$error.required" class="help-block">
+					  password obligatoire
+					</span>
+					<span ng-show="phoneForm.password.$error.minlength" class="help-block">
+					  password  court.
+					</span>
+					 <span ng-show="phoneForm.password.$error.maxlength" class="help-block">
+						  password long?.
+					 </span>
+				</div>
+
+		</label>
+	  <label>
+	    <input      type="file"
+									required
+									 name="img"
+                   accept="image/*"
+									 multiple
+                   image="img"
+                   resize-max-height="400"
+                   resize-max-width="300"
+                   resize-quality="0.7"  />
+					<span ng-show="phoneForm.img.$error && (img.length != 4)">
+					Selectionner 4 photo</span>
 	  </label>
-	  <label class="item item-input item-floating-label">
-	    <input type="text" placeholder="Couleur" ng-model="phone.couleur">
-	  </label>
-	  <label class="item item-input item-floating-label">
-	    <input type="text" placeholder="isNeuf" ng-model="phone.isNeuf">
-	  </label>
-	   <label class="item item-input item-floating-label">
-	    <input type="text" placeholder="isDuos" ng-model="phone.isDuos">
-	  </label>
-	   <label class="item item-input item-floating-label">
-	    <input type="text" placeholder="prix" ng-model="phone.prix">
-	  </label>
-	  <label class="item item-input item-floating-label">
-	    <input type="text" placeholder="ville" ng-model="phone.ville">
-	  </label>
-	  <label class="item item-input item-floating-label">
-	    <input type="text" placeholder="phone" ng-model="phone.phone">
-	  </label>
-	  <label class="item item-input item-floating-label" >
-	    <input type="text" placeholder="email" ng-model="phone.email">
-	  </label>
-	  <label class="item item-input item-floating-label">
-	    <input type="file" placeholder="photo" ng-model="phone.image">
-	  </label>
-	  <label class="item item-input item-floating-label">
-	   <button ng-click="addPhone()">add Phone</button>
-	  </label>
-	</div>
+
+
+		<label>
+		<input type="text"
+			   name="trader_name"
+				 placeholder="trader_name"
+			   ng-model="phone.trader_name"
+			   ng-minlength="2"
+			   ng-maxlength="6" />
+				 <div ng-show="phoneForm.$submitted || phoneForm.marque.$touched">
+					<span ng-show="phoneForm.trader_name.$error.minlength" class="help-block">
+					  nom court.
+					</span>
+					 <span ng-show="phoneForm.trader_name.$error.maxlength" class="help-block">
+						 nom long?
+					 </span>
+				</div>
+	</label>
+
+	<label>
+		<input type="text"
+			   name="trader_facebook"
+				 placeholder="trader_facebook"
+			   ng-model="phone.trader_facebook"
+			   ng-minlength="2"
+			   ng-maxlength="10" />
+				 <div ng-show="phoneForm.$submitted || phoneForm.marque.$touched">
+					<span ng-show="phoneForm.trader_facebook.$error.minlength" class="help-block">
+					  trader_facebook court.
+					</span>
+					 <span ng-show="phoneForm.trader_facebook.$error.maxlength" class="help-block">
+						 trader_facebook long?
+					 </span>
+				</div>
+	</label>
+
+	<label>
+		<input type="text"
+			   name="trader_insta"
+				 placeholder="trader_insta"
+			   ng-model="phone.trader_insta"
+			   ng-minlength="2"
+			   ng-maxlength="10" />
+				 <div ng-show="phoneForm.$submitted || phoneForm.marque.$touched">
+					<span ng-show="phoneForm.trader_insta.$error.minlength" class="help-block">
+					  trader_facebook court.
+					</span>
+					 <span ng-show="phoneForm.trader_insta.$error.maxlength" class="help-block">
+						 trader_facebook long?
+					 </span>
+				</div>
+	</label>
+
+
+		<label>
+	   <button ng-if="phoneForm.$valid && img.length == 4"  
+		  			ng-click="addPhone(img)">add Phone</button>
+	  </label>	
+		</form>
+		</ion-scroll>
     </ion-content>
 </ion-view>

@@ -6,30 +6,42 @@ app.config(function ($translateProvider) {
      $translateProvider.translations('fr',translations_fr);
      $translateProvider.preferredLanguage('fr');
      $translateProvider.useSanitizeValueStrategy('sanitize');
-     console.log("$translateProvider bien initializer");
+     //console.log("$translateProvider bien initializer");
 })
+
+
 app.config(function($stateProvider,$urlRouterProvider){
      $stateProvider
          .state('home',{
                url: '/home',
                templateUrl: 'templates/home.html',
-              controller:'home'
+              controller:'homeCtrl'
      });
      $stateProvider
-         .state('mobile',{
-          url: '/mobile',
+         .state('phone',{
+          url: '/phone',
           templateUrl: 'templates/mobile.html',
-          controller:'mobile'    
+          controller:'phoneCtrl'    
 
      });
+
+
+    $stateProvider
+        .state('Categorie',{
+            url: '/Categorie',
+            templateUrl: 'templates/Categorie.html' ,
+            controller : 'categorieCtrl'
+        });
 
      $stateProvider
          .state('settings',{
               url: '/settings',
               templateUrl: 'templates/settings.html',
-              controller:'settings'
+              controller:'settingCtrl'
 
          });
+
+
 
      //la root  par defaut
      $urlRouterProvider.otherwise('/home')

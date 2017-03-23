@@ -1,0 +1,15 @@
+<ion-view view-title="Categorie">
+    <ion-content class="padding">
+
+        <form name="myForm">
+            <label for="Categorie">Make a choice:</label>
+            <select name="Categorie" id="Categorie"
+                    ng-options="option.name for option in data.availableOptions track by option.id"
+                    ng-model="data.selectedOption"></select>
+            <button  ng-click="choisie()">presenter</button>
+
+             <label>
+	  </label>
+        </form>
+    </ion-content>
+</ion-view>

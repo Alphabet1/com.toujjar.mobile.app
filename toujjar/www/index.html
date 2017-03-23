@@ -34,14 +34,31 @@
     <script src="lang/en.js"></script>
     <script src="lang/fr.js"></script>
 
+    <!--Img resizer -->
+    <script src="lib/angular-images-resizer.js"></script>
+    <script src="lib/resize-service.js"></script>
+    <script src="lib/imageupload.js"></script>
+
+
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="js/Routing.js"></script>
-    <script src="js/Controllers/controllers.js"></script>
-    <script src="js/Services/services.js"></script>
+    <!-- service -->
+     <script src="js/Services/services.js"></script>
+    <script src="js/Services/phoneService.js"></script>
+    <!-- Controllers -->
+    <script src="js/Controllers/homeCtrl.js"></script>
+    <script src="js/Controllers/phoneCtrl.js"></script>
+    <script src="js/Controllers/categorieCtrl.js" ></script>
+    <script src="js/Controllers/phoneCtrl.js"></script>
+    
+
+    <!-- Directive -->
+    <script src="js/Directive/directive.js"></script>
+  
   </head>
   <body ng-app="toujjar">
     <!--
@@ -62,7 +79,7 @@
           <i class="fa fa-home fa-2x" aria-hidden="true"></i><br />
           {{'TAB1' | translate}}
         </a>
-        <a class="tab-item" ui-sref="mobile">
+        <a class="tab-item" ui-sref="Categorie">
           <i class="fa fa-mobile fa-2x" aria-hidden="true"></i><br />
           {{'TAB2' | translate}}
         </a>
