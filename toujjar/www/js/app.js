@@ -10,7 +10,9 @@ var app = angular.module('toujjar', ['ionic',
                                      'starter.controllers', 
                                      'starter.services',
                                      'images-resizer',
-                                     'imageupload'
+                                     'imageupload',
+                                     'ngMessages'
+
                                      ])
 
 app.run(function($ionicPlatform) {
